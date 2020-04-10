@@ -11,10 +11,11 @@ ENV DB_HOST='127.0.0.1'\
     DB_PASSWD=''\
     DB_NAME='tiebacloud' \
     CONIFG_PATH='/srv/www/config.php' \
-    CSRF='true'
+    CSRF='false'
 
 
-RUN git clone https://github.com/MoeNetwork/Tieba-Cloud-Sign.git /srv/www && \
+RUN rm -r /srv/www \
+    git clone https://github.com/sanzuwu/tieba-sign /srv/www && \
     rm -r /var/cache/apk && \
     rm -r /usr/share/man && \
     ls
